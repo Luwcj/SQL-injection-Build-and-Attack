@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:14
+    container_name: sqli_lab_db
+    restart: always
+    environment:
+      POSTGRES_USER: luc123
+      POSTGRES_PASSWORD: luc321
+      POSTGRES_DB: labdb
+    volumes:
+      - ./db/db.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./App/src:/var/www/html:rw
+    ports:
+      - "54321:5432"
+
+  web:
+    build: ./App
+    container_name: sqli_lab_src
+    restart: always
+    ports:
+      - "20504:80"
+    volumes:
+      - ./App/src:/var/www/html
+    environment:
+      DB_HOST: db
+      DB_USER: luc123          
+      DB_PASS: luc321     
+      DB_NAME: labdb
