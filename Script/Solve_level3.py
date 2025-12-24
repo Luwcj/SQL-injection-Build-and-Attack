@@ -80,5 +80,6 @@ for position in range(1, 50):
         break
 
 print("\n" + "="*30)
-print(f"✅ PASSWORD TÌM ĐƯỢC: {''.join(PASSWORD)}")
+print(f" PASSWORD TÌM ĐƯỢC: {''.join(PASSWORD)}")
+
 print("="*30)
