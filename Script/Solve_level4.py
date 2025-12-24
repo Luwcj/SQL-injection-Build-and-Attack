@@ -99,5 +99,6 @@ for position in range(start_pos, 50):
         break
 
 print("\n" + "="*40)
-print(f"✅ FINAL PASSWORD: {''.join(PASSWORD)}")
+print(f" FINAL PASSWORD: {''.join(PASSWORD)}")
+
 print("="*40)
